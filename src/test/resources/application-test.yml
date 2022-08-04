@@ -1,0 +1,21 @@
+spring:
+  config:
+    activate:
+      on-profile:
+        - test
+  datasource:
+    url: jdbc:h2:mem:testdb; # use in memory db
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update # disable DB schema creation from entity
+  h2:
+    console:
+      enabled: true # enable h2 web console
+# 加密所需的密钥
+#jasypt:
+#  encryptor:
+#    password: #
+#    # 默认加密方式PBEWithMD5AndDES,可以更改为PBEWithMD5AndTripleDES
+#    algorithm: PBEWithMD5AndDES

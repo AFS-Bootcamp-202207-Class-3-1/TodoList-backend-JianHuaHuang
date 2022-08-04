@@ -1,0 +1,29 @@
+server:
+  port: 8082
+
+spring:
+  config:
+    activate:
+      on-profile:
+        - local
+  datasource:
+    url: jdbc:mysql://localhost:3306/employee_database?useUnicode=true&characterEncoding=utf8
+    username: ENC(iAOIeRb9JE4c1BqqmCYZTA==)
+    password: ENC(k3cG4gv3SIMtTRa3NQJcwwdRZLoc0P9b)
+  jpa:
+    hibernate:
+      ddl-auto: none #改成none ， 由 flyway来管理
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+  flyway:
+    baseline-on-migrate: true
+
+# 加密所需的密钥 但是这个加密的密钥我是放在VM Option上面的
+#jasypt:
+#  encryptor:
+#    password: Bt%XJ^n1j8mz
+#    # 默认加密方式PBEWithMD5AndDES,可以更改为PBEWithMD5AndTripleDES
+#    algorithm: PBEWithMD5AndDES
+
