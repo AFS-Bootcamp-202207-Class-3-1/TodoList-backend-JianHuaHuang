@@ -1,4 +1,4 @@
-package com.rest.springbootemployee.entity;
+package com.kirayous.todos.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,22 +12,13 @@ import javax.persistence.Id;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Employee {
-
-
+@Entity(name ="todo_list" )
+public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    Integer id;
 
-    private String name;
+    String text;
 
-    private Integer age;
-
-    private String gender;
-
-    private Integer salary;
-
-    private Integer companyId;
-
+    Boolean done;
 }
