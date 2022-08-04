@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 public class TodoNotFoundException extends RuntimeException {
 
 
-    String code = "404";
+    private String code = "404";
 
     public TodoNotFoundException() {
         super("TodoNotFound");

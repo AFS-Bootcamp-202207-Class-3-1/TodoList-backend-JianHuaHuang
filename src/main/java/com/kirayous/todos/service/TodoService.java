@@ -20,6 +20,8 @@ public class TodoService {
     }
 
     public Todo insertTodo(Todo todo) {
+        if(Objects.isNull(todo.getDone()))
+            todo.setDone(false);
         return todoJpaRepository.save(todo);
     }
 
